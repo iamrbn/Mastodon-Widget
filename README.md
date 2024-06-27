@@ -1,5 +1,5 @@
-# <img title="Mastodon Icon" src="/Images/mastodon.png" width="25"/> Mastodon-Widget
-![](https://img.shields.io/badge/dynamic/json?color=EC1181&style=plastic&label=Version&query=version&url=https://raw.githubusercontent.com/iamrbn/Mastodon-Widget/main/Mastodon-Widget.json?token=GHSAT0AAAAAACS44I5LXSHOYD2IPJHRP3MGZT5FCXQ "Hi there 👋 I'm always up to date")
+# <img title="Mastodon Icon" src="/Images/mastodon.png" width="24"/> Mastodon-Widget
+![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamrbn%2FMastodon-Widget%2Fmain%2FMastodon-Widget.json%3Ftoken%3DGHSAT0AAAAAACS44I5LXSHOYD2IPJHRP3MGZT5FCXQ&query=version&style=plastic&logo=mastodon&logoColor=5B45DA&logoSize=auto&label=Version&labelColor=white&color=5B45DA "Hi there 👋 I'm always up to date")
 
 ## Overview
 
@@ -17,7 +17,8 @@
 The Script updates itself[^1]
 
 ### On the first run
-<!-- It downloads a module from this github repo and saves it in the "Inline Weather" directory. -->
+It will Downloads and Save the Following Symbols at the directory "Reddit-Widget"
+It downloads a module and from this github repo and saves it in the "Inline Weather" directory.
 ```
 iCloud Drive/
 ├─ Scriptable/
