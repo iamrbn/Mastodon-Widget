@@ -7,7 +7,19 @@
 
 #### Script Parameter
 ``` Javascript
-// 
+let roundProfileImages = true
+let reposts = false
+let favUsers = [
+      'simonbs@mastodon.social',
+      'christianselig@mastodon.social',
+      'elhotzo@mastodon.social',
+      'icesck@mastodon.social',
+      'iamrbn@mastodon.social',
+      'mammoth@moth.social',
+      'ivory@tapbots.social',
+      'mvan231@mastodon.social',
+      'IceCubesApp@mastodon.online'
+     ];
 ```
 
 #### Widget Parameter (_Optional_)
@@ -17,27 +29,28 @@
 The Script updates itself[^1]
 
 ### On the first run
-It will Downloads and Save the Following Symbols at the directory "Reddit-Widget"
-It downloads a module and from this github repo and saves it in the "Inline Weather" directory.
+It downloads a module and an image from this github repo and saves it in the "Mastodon-Widget" directory.    
+<img title="mastodonModule.js" src="Images/jsModule.png" width="50"/>  <img title="mastodon.png" src="Images/mastodon.png" width="42"/>
+
 ```
 iCloud Drive/
 ├─ Scriptable/
 │  ├─ Mastodon-Widget/
 │  │  ├─ mastodon.png
-│  │  ├─ 
+│  │  ├─ mastodonModule.js
 ```
 
 ---
 
 <p align="center">
   <a href="https://reddit.com/user/iamrbn/">
-    <img title="My second Reddit @iamrbn" src="https://github.com/iamrbn/slack-status/blob/08d06ec886dcef950a8acbf4983940ad7fb8bed9/Images/Badges/reddit_black_iamrbn.png" width="125"/>
+    <img title="Follow Me On Reddit: @iamrbn" src="https://github.com/iamrbn/slack-status/blob/08d06ec886dcef950a8acbf4983940ad7fb8bed9/Images/Badges/reddit_black_iamrbn.png" width="125"/>
   </a>
   <a href="https://twitter.com/iamrbn_/">
-    <img title="Follow Me On Twitter @iamrbn_" src="https://github.com/iamrbn/slack-status/blob/ae62582b728c2e2ad8ea6a55cc7729cf71bfaeab/Images/Badges/twitter_black.png" width="130"/>
+    <img title="Follow Me On Twitter: @iamrbn_" src="https://github.com/iamrbn/slack-status/blob/ae62582b728c2e2ad8ea6a55cc7729cf71bfaeab/Images/Badges/twitter_black.png" width="130"/>
   </a>
   <a href="https://mastodon.social/@iamrbn">
-    <img title="Follow Me On Mastodon @iamrbn@mastodon.socail" src="https://github.com/iamrbn/slack-status/blob/1e67e1ea969b791a36ebb71142ec8719594e1e8d/Images/Badges/mastodon_black.png" width="163"/>
+    <img title="Follow Me On Mastodon: @iamrbn@mastodon.socail" src="https://github.com/iamrbn/slack-status/blob/1e67e1ea969b791a36ebb71142ec8719594e1e8d/Images/Badges/mastodon_black.png" width="163"/>
   </a>
 </p>
 
