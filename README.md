@@ -1,5 +1,5 @@
 # <img title="Mastodon Icon" src="/Images/mastodon.png" width="25"/> Mastodon-Widget
-![](https://img.shields.io/badge/dynamic/json?color=EC1181&style=plastic&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamrbn%2FMastodon-Widget%2Fmain%2FMastodon-Widget.json "Hi there 👋 I'm always up to date")
+![](https://img.shields.io/badge/dynamic/json?color=EC1181&style=plastic&label=Version&query=version&url=https://raw.githubusercontent.com/iamrbn/Mastodon-Widget/main/Mastodon-Widget.json?token=GHSAT0AAAAAACS44I5LXSHOYD2IPJHRP3MGZT5FCXQ "Hi there 👋 I'm always up to date")
 
 ## Overview
 
