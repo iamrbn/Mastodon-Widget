@@ -29,14 +29,15 @@ let favUsers = [
 The Script updates itself[^1]
 
 ### On the first run
-It downloads a module and an image from this github repo and saves it in the "Mastodon-Widget" directory.    
-<img title="mastodonModule.js" src="Images/jsModule.png" width="50"/>  <img title="mastodon.png" src="Images/mastodon.png" width="42"/>
+It downloads a module and two images from this github repo and saves it in the "Mastodon-Widget" directory.    
+<img title="mastodonModule example icon" src="Images/jsModule.png" width="50"/>  <img title="mastodon icon" src="Images/mastodon.png" width="42"/> <img title="mastodon icon with 10% opacity" src="Images/mastodon_10.png" width="42"/>
 
 ```
 iCloud Drive/
 ├─ Scriptable/
 │  ├─ Mastodon-Widget/
 │  │  ├─ mastodon.png
+│  │  ├─ mastodon_10.png
 │  │  ├─ mastodonModule.js
 ```
 
