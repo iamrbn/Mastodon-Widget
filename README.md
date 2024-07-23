@@ -1,7 +1,18 @@
 # <img title="Mastodon Icon" src="/Images/mastodon.png" width="24"/> Mastodon-Widget
+Script which shows Posts of your favorite users on Mastodon via [Scriptable-App](https://scriptable.app/)     
+
 ![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamrbn%2FMastodon-Widget%2Fmain%2FMastodon-Widget.json%3Ftoken%3DGHSAT0AAAAAACS44I5LXSHOYD2IPJHRP3MGZT5FCXQ&query=version&style=plastic&logo=mastodon&logoColor=5B45DA&logoSize=auto&label=Version&labelColor=white&color=5B45DA "Hi there 👋 I'm always up to date")
 
 ## Overview
+<img title="Overview Available Widget Sizes" src="/Images/overviewWidgets.png" width="1000"/>
+
+## Features
+
+- Activate Push-Notifiactions (_Devices specific_)
+- Set widget refresh interval (_Devices specific_)
+- Clickable username, profileimage, and post itself
+- Image preiview (_if available_) for the large widget
+- Shows instance emoji in username if available (_medium & large widget_)
 
 ## Config
 
@@ -10,16 +21,16 @@
 var CONFIGS = {
       DEVICES: {
        iPad: {
-        notifications: false, //true: Allow new Pushnotifications on device; opposite 'false'
-        refreshInt: 60 // widget refresh interval in minutes
+        notifications: false, //true = Allow Push-Notifications on specific device
+        refreshInt: 60 //widget refresh interval in minutes
         },
        iPhone: {
         notifications: true,
-        refreshInt: 60
+        refreshInt: 30
         },
        macBook: {
         notifications: false,
-        refreshInt: 60
+        refreshInt: 120
       }
      }
 };
@@ -36,17 +47,17 @@ let favUsers = [
       'ivory@tapbots.social',
       'mvan231@mastodon.social',
       'IceCubesApp@mastodon.online'
-     ];
+      ];
 ```
 
 #### Widget Parameter (_Optional_)
-
+Select your favorite users via `favUsers` array and / or select it individual for every single widget via widget parameter.
 
 ### Selfupdate Function
 The Script updates itself[^1]
 
 ### On the first run
-It downloads a module and two images from this github repo and saves it in the "Mastodon-Widget" directory.    
+It downloads a module and three images from this github repo and saves it in the "Mastodon-Widget" directory.    
 <img title="mastodonModule example icon" src="Images/jsModule.png" width="50"/>  <img title="mastodon icon" src="Images/mastodon.png" width="42"/> <img title="mastodon icon with 10% opacity" src="Images/mastodon_10.png" width="42"/>
 
 ```
