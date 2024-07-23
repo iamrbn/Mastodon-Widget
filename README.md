@@ -7,6 +7,23 @@
 
 #### Script Parameter
 ``` Javascript
+var CONFIGS = {
+      DEVICES: {
+       iPad: {
+        notifications: false, //true: Allow new Pushnotifications on device; opposite 'false'
+        refreshInt: 60 // widget refresh interval in minutes
+        },
+       iPhone: {
+        notifications: true,
+        refreshInt: 60
+        },
+       macBook: {
+        notifications: false,
+        refreshInt: 60
+      }
+     }
+};
+
 let roundProfileImages = true
 let reposts = false
 let favUsers = [
