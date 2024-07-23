@@ -1,7 +1,14 @@
 
 //=========================================//
 //============ START OF MODULE ============//
-//================ Version 0.9  ===============//
+//=============== Version 0.9 =============//
+
+
+module.exports.getDateTime = (str) => {
+	df = new DateFormatter()
+	df.dateFormat = 'dd.MM.YY, HH:mm'
+ return df.string(new Date(str))
+};
 
 
 // Finds the user ID of the given user
@@ -31,33 +38,51 @@ module.exports.getImage = async (fm, dir, name) => {
 	imgPath = fm.joinPath(dir, name + ".png")
 	await fm.downloadFileFromiCloud(imgPath)
 	img = await fm.readImage(imgPath)
- return img
+  
+ return Image.fromFile(imgPath)
 };
 
-
-module.exports.emojiFinder =  async (string) => {
-  let str;
+/*module.exports.emojiFinder =  async (string, userInstance) => {
+  let img;
   try {
     emojiName = string.match(/(?<=:)\w+\D(?=:)/g)
     emojis = await new Request(`https://${ userInstance }/api/v1/custom_emojis`).loadJSON()
     emoji = emojis.filter(item => item.shortcode == emojiName)
-    str = await loadImage(emoji[0].url)
+    img = await new Request(emoji[0].url).loadImage()
   } catch(error) {
-    str = error.message
+    img = error.message
   }
  //return await loadImage(emoji[0].url)
-  return str
+  return img
+};*/
+
+module.exports.emojCreator =  async (string, userInstance, base) => {
+  let displayName = base.addText(string.replace(/(?<=:)\w+\D(?=:)/g, '').replace(/[:]/g, ""))
+       displayName.font = Font.boldRoundedSystemFont(20)
+       displayName.minimumScaleFactor = 0.7
+       
+  let img;
+  try {
+    emojiName = string.match(/(?<=:)\w+\D(?=:)/g)
+    emojis = await new Request(`https://${ userInstance }/api/v1/custom_emojis`).loadJSON()
+    emoji = emojis.filter(item => item.shortcode == emojiName)
+    img = await new Request(emoji[0].url).loadImage()
+    image = base.addImage(img)
+    image.imageSize = new Size(25, 25)
+} catch(error) {
+    console.log(error.message)
+  }
 };
 
 
 // Draws a line
-module.exports.drawLine = (wordsLength) => {
-  log({wordsLength})
+module.exports.drawLine = (characters) => {
+  log({characters})
   
-  if (wordsLength <= 25) length = 100
-  else if (wordsLength <= 50) length = 200
-  else if (wordsLength <= 100) length = 300
-  else length = 20
+  if (characters < 50) length = characters + 50
+  else if (characters < 150) length = characters - 45
+  else if (characters > 150) length = characters - 110
+  else length = characters - 0
   
   log({length})
   
@@ -66,7 +91,7 @@ module.exports.drawLine = (wordsLength) => {
   canvas.size = new Size(80, 400)
   path = new Path()
   path.move(new Point(40, 40))
-  path.addLine(new Point(40, length/1.19))
+  path.addLine(new Point(40, length))
   canvas.addPath(path)
   canvas.setStrokeColor(Color.lightGray())
   canvas.setLineWidth(2)
@@ -76,7 +101,7 @@ module.exports.drawLine = (wordsLength) => {
 };
 
 
-module.exports.notificationScheduler = (res) => {
+module.exports.notificationScheduler = (df, res, body, reblogBody, nKey, userName) => {
  applicationName = (res[0].application == null) ? "" : res[0].application.name
  if (res[0].media_attachments[0] == undefined){
     imgURLStr = res[0].account.avatar
