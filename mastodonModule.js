@@ -1,7 +1,7 @@
 
 //=========================================//
 //============ START OF MODULE ============//
-//=============== Version 1.0 =============//
+//============== Version 1.0 ==============//
 
 
 module.exports.getDateTime = (str) => {
@@ -42,7 +42,8 @@ module.exports.getImage = async (fm, dir, name) => {
  return Image.fromFile(imgPath)
 };
 
-/*module.exports.emojiFinder =  async (string, userInstance) => {
+/*
+module.exports.emojiFinder =  async (string, userInstance) => {
   let img;
   try {
     emojiName = string.match(/(?<=:)\w+\D(?=:)/g)
