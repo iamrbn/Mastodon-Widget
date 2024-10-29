@@ -27,11 +27,7 @@ var CONFIGS = {
        iPhone: {
         notifications: true,
         refreshInt: 30
-        },
-       macBook: {
-        notifications: false,
-        refreshInt: 120
-      }
+        }
      }
 };
 
