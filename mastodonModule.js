@@ -27,6 +27,7 @@ module.exports.createUserName = async (str) => {
   return tag 
 };
 
+
 // Loads image from given URL
 module.exports.loadImage = async (imgURL) => {
   return await new Request(imgURL).loadImage()
@@ -42,6 +43,7 @@ module.exports.getImage = async (fm, dir, name) => {
  return Image.fromFile(imgPath)
 };
 
+
 /*
 module.exports.emojiFinder =  async (string, userInstance) => {
   let img;
@@ -56,6 +58,7 @@ module.exports.emojiFinder =  async (string, userInstance) => {
  //return await loadImage(emoji[0].url)
   return img
 };*/
+
 
 module.exports.emojCreator =  async (string, userInstance, base) => {
   let displayName = base.addText(string.replace(/(?<=:)\w+\D(?=:)/g, '').replace(/[:]/g, ""))
@@ -99,6 +102,23 @@ module.exports.drawLine = (characters) => {
   canvas.strokePath()
  
   return canvas.getImage()
+};
+
+https://github.com/iamrbn/Mastodon-Widget/blob/main/Images/mastodon.png
+
+// LOADING AND SAVING IMAGES FROM URL TO FOLDER
+module.exports.saveImages = async (fm, dir) => {
+  let imgURL = "https://raw.githubusercontent.com/iamrbn/Mastodon-Widget/main/Images/"
+  let imgs = ["mastodon.png", "mastodon_10.png"]
+  for (img of imgs){
+        img_path = fm.joinPath(dir, img)
+        if (!fm.fileExists(img_path)){
+            console.log("Loading image: " + img)
+            request = new Request(imgURL + img)
+            image = await request.loadImage()
+            fm.writeImage(img_path, image)
+        }
+    }
 };
 
 
@@ -167,7 +187,7 @@ module.exports.updateCheck = async (fm, modulePath, version) => {
   url = 'https://raw.githubusercontent.com/iamrbn/Mastodon-Widget/main/'
   endpoints = ['Mastodon-Widget.js', 'mastodonModule.js']
   
-    let uC
+    let uC;
     try {
       updateCheck = new Request(url+endpoints[0]+'on')
       uC = await updateCheck.loadJSON()
