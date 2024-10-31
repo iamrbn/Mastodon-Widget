@@ -1,7 +1,7 @@
 
 //=========================================//
 //============ START OF MODULE ============//
-//============== Version 1.0 ==============//
+//=============== Version 1.0 ================//
 
 
 module.exports.getDateTime = (str) => {
@@ -167,7 +167,7 @@ module.exports.updateCheck = async (fm, modulePath, version) => {
   url = 'https://raw.githubusercontent.com/iamrbn/Mastodon-Widget/main/'
   endpoints = ['Mastodon-Widget.js', 'mastodonModule.js']
   
-    let uC;
+    let uC
     try {
       updateCheck = new Request(url+endpoints[0]+'on')
       uC = await updateCheck.loadJSON()
